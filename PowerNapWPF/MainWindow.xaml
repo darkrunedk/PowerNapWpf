@@ -1,0 +1,29 @@
+﻿<Window x:Class="PowerNapWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PowerNapWPF"
+        mc:Ignorable="d"
+        Title="PowerNap Client" Height="350" Width="525" MinWidth="525" MinHeight="350" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Shared folder:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,2.5,10,5" FontSize="11"/>
+        <TextBox x:Name="SharedFolderTextBox" Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Stretch" Text="Shared folder path..." VerticalAlignment="Top" Width="Auto" Margin="90,5,135,5" Grid.Row="0" GotFocus="SharedFolderTextBox_GotFocus" LostFocus="SharedFolderTextBox_LostFocus"/>
+        <Button x:Name="AddSharedFolderButton" Style="{StaticResource DefaultButton}" Content="Add Shared Folder" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="390,5,10,5" Grid.Row="0" Click="AddSharedFolderButton_Click"/>
+
+        <Label Content="File name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Grid.Row="1"/>
+        <TextBox x:Name="FileNameTextBox" Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Left" Text="File name..." VerticalAlignment="Top" Width="120" Margin="80,10,0,0" Grid.Row="1" LostFocus="FileNameTextBox_LostFocus" GotFocus="FileNameTextBox_GotFocus"/>
+        <Button x:Name="GetFileButton" Style="{StaticResource DefaultButton}" Content="Get File" HorizontalAlignment="Left" Margin="210,10,0,0" Grid.Row="1" VerticalAlignment="Top" Click="GetFileButton_Click" />
+
+        <Label Content="Status:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Grid.Row="2"/>
+        <TextBox x:Name="StatusTextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="10" VerticalScrollBarVisibility="Auto" Focusable="False" Grid.Row="3"/>
+
+    </Grid>
+</Window>
